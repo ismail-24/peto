@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Categories extends StatefulWidget {
   @override
@@ -6,38 +7,61 @@ class Categories extends StatefulWidget {
 }
 
 class _CategoriesState extends State<Categories> {
+  List<String> cate = [];
+  List<String> cateName = [];
+
+  @override
+  void initState() {
+    super.initState();
+    fetchData();
+  }
+
+  void fetchData() async {
+    QuerySnapshot querySnapshot =
+        await FirebaseFirestore.instance.collection('categories').get();
+
+    querySnapshot.docs.forEach((document) {
+      String image = document.get('image') as String;
+      String ctgName = document.get('ctgName') as String;
+
+      setState(() {
+        cate.add(image);
+        cateName.add(ctgName);
+      });
+    });
+  }
+
   Color mySplashColor = const Color.fromRGBO(255, 115, 34, 0.2);
-  List<String> cate = [
-    'images/dog-food.png',
-    'images/dog-grooming.png',
-    'images/pet-bakery.png',
-    'images/pngegg.png',
-    'images/PngItem.png',
-    'images/shutterstock.png',
-  ];
-  List<String> cateName = [
-    'Dog Food',
-    'Dog Grooming',
-    'Pet bakery',
-    'Dog Toys',
-    'Dog Sleep',
-    'Dog Treatment',
-  ];
+  bool isPressed = false;
+
   Container _buildCategoryContainer(
     String label,
   ) {
     return Container(
-      padding: EdgeInsets.only(left: 2, right: 2, top: 8),
-      child: MaterialButton(
-        splashColor: mySplashColor,
+      padding: const EdgeInsets.only(left: 2, right: 2, top: 8),
+      child: ElevatedButton(
         onPressed: () {
-          setState() {}
+          setState() {
+            isPressed = !isPressed;
+          }
         },
-        shape: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(14))),
+        style: ButtonStyle(
+          overlayColor: MaterialStateProperty.all(
+              const Color.fromRGBO(248, 164, 76, 0.698)),
+          shadowColor: MaterialStateProperty.all(Colors.transparent),
+          backgroundColor: MaterialStateProperty.all(Colors.transparent),
+          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(14.0),
+              side: const BorderSide(
+                color: Color.fromRGBO(248, 164, 76, 0.698),
+              ),
+            ),
+          ),
+        ),
         child: Text(
           label,
-          style: TextStyle(
+          style: const TextStyle(
             color: Color(0xFF181725),
             fontSize: 18,
             fontFamily: 'Poppins',
@@ -76,7 +100,7 @@ class _CategoriesState extends State<Categories> {
               width: 350,
               height: 40,
               decoration: ShapeDecoration(
-                color: Color(0xFFF3F3F3),
+                color: const Color(0xFFF3F3F3),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
@@ -95,7 +119,7 @@ class _CategoriesState extends State<Categories> {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                  Padding(padding: EdgeInsets.symmetric(horizontal: 16)),
+                  const Padding(padding: EdgeInsets.symmetric(horizontal: 16)),
                   _buildCategoryContainer('All'),
                   _buildCategoryContainer('Dog'),
                   _buildCategoryContainer('Cat'),
@@ -110,8 +134,6 @@ class _CategoriesState extends State<Categories> {
                     width: 360,
                     height: 700,
                     child: ListView.builder(
-                      // scrollDirection: Axis.vertical,
-                      // shrinkWrap: true,
                       itemCount: (cate.length / 2).ceil(),
                       itemBuilder: (context, index) {
                         final int firstImageIndex = index * 2;
@@ -131,11 +153,11 @@ class _CategoriesState extends State<Categories> {
                                 width: 156,
                                 height: 189.11,
                                 child: Card(
-                                  color: Color(0x19F8A44C),
-                                  margin: EdgeInsets.all(0),
+                                  color: const Color(0x19F8A44C),
+                                  margin: const EdgeInsets.all(0),
                                   elevation: 0,
                                   shape: RoundedRectangleBorder(
-                                    side: BorderSide(
+                                    side: const BorderSide(
                                       width: 0.50,
                                       color:
                                           Color.fromRGBO(248, 164, 76, 0.698),
@@ -157,7 +179,7 @@ class _CategoriesState extends State<Categories> {
                                         onPressed: () {},
                                         child: Text(
                                           cateName[firstImageIndex],
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                             color: Color(0xFF181725),
                                             fontSize: 16,
                                             fontFamily: 'Poppins',
@@ -175,11 +197,11 @@ class _CategoriesState extends State<Categories> {
                                 width: 156,
                                 height: 189.11,
                                 child: Card(
-                                  color: Color(0x19F8A44C),
-                                  margin: EdgeInsets.all(0),
+                                  color: const Color(0x19F8A44C),
+                                  margin: const EdgeInsets.all(0),
                                   elevation: 0,
                                   shape: RoundedRectangleBorder(
-                                    side: BorderSide(
+                                    side: const BorderSide(
                                       width: 0.50,
                                       color: Color(0xB2F8A44C),
                                     ),
@@ -202,7 +224,7 @@ class _CategoriesState extends State<Categories> {
                                         onPressed: () {},
                                         child: Text(
                                           cateName[secondImageIndex],
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                             color: Color(0xFF181725),
                                             fontSize: 16,
                                             fontFamily: 'Poppins',
