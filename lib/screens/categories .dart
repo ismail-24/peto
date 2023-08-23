@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:peto/screens/home.dart';
 
 class Categories extends StatefulWidget {
   @override
@@ -40,11 +41,7 @@ class _CategoriesState extends State<Categories> {
     return Container(
       padding: const EdgeInsets.only(left: 2, right: 2, top: 8),
       child: ElevatedButton(
-        onPressed: () {
-          setState() {
-            isPressed = !isPressed;
-          }
-        },
+        onPressed: () {},
         style: ButtonStyle(
           overlayColor: MaterialStateProperty.all(
               const Color.fromRGBO(248, 164, 76, 0.698)),
@@ -79,17 +76,23 @@ class _CategoriesState extends State<Categories> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
-        title: const Center(
-          child: Text(
-            'Peto',
-            style: TextStyle(
-              color: Color(0xFF1F2223),
-              fontSize: 42,
-              fontFamily: 'Poppins',
-              fontWeight: FontWeight.w700,
-              height: 1.30,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(right: 40),
+              child: Text(
+                'Peto',
+                style: TextStyle(
+                  color: Color(0xFF1F2223),
+                  fontSize: 42,
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w700,
+                  height: 1.30,
+                ),
+              ),
             ),
-          ),
+          ],
         ),
       ),
       body: SingleChildScrollView(
@@ -105,14 +108,18 @@ class _CategoriesState extends State<Categories> {
                   borderRadius: BorderRadius.circular(10),
                 ),
               ),
-              child: const TextField(
-                cursorColor: Color.fromARGB(255, 34, 32, 32),
+              child: TextField(
                 decoration: InputDecoration(
-                  border: InputBorder.none,
-                  prefixIconColor: Colors.grey,
-                  hintText: 'Search for your product',
-                  prefixIcon: Icon(Icons.search),
-                ),
+                    filled: true,
+                    fillColor: Color(0xFFF3F3F3),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8.0),
+                      borderSide: BorderSide.none,
+                    ),
+                    hintText: "Search for your product ",
+                    hintStyle:
+                        TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
+                    prefixIcon: Icon(Icons.search)),
               ),
             ),
             SingleChildScrollView(
@@ -178,7 +185,13 @@ class _CategoriesState extends State<Categories> {
                                         ),
                                       ),
                                       TextButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) => home()),
+                                          );
+                                        },
                                         child: Text(
                                           cateName[firstImageIndex],
                                           style: const TextStyle(
@@ -223,7 +236,13 @@ class _CategoriesState extends State<Categories> {
                                         ),
                                       ),
                                       TextButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) => home()),
+                                          );
+                                        },
                                         child: Text(
                                           cateName[secondImageIndex],
                                           style: const TextStyle(

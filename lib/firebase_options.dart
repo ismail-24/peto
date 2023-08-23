@@ -67,7 +67,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '147610163285',
     projectId: 'peto-2',
     storageBucket: 'peto-2.appspot.com',
-    iosClientId: '147610163285-b8jeif2vspvfip14i7eap9volltn64d8.apps.googleusercontent.com',
+    iosClientId:
+        '147610163285-b8jeif2vspvfip14i7eap9volltn64d8.apps.googleusercontent.com',
     iosBundleId: 'com.example.peto',
   );
 
@@ -77,7 +78,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '147610163285',
     projectId: 'peto-2',
     storageBucket: 'peto-2.appspot.com',
-    iosClientId: '147610163285-f4umhuth77hk422rlg0vmvukiml3h8o0.apps.googleusercontent.com',
+    iosClientId:
+        '147610163285-f4umhuth77hk422rlg0vmvukiml3h8o0.apps.googleusercontent.com',
     iosBundleId: 'com.example.peto.RunnerTests',
   );
 }
