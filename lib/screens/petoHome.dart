@@ -151,61 +151,41 @@ class _petoHomeState extends State<petoHome> {
                 ),
               ),
               SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(
-                        width: 5,
-                      ),
-                      categories_comp(
-                          image: "assets/dogo.png",
-                          name: "Dog",
-                          color: 0xFF3E423F,
-                          context: context,
-                          categoriesepage: Categories(),
-                          backGroundColor: 0xFFFEF1E4),
-                      categories_comp(
-                          image: "assets/catoo.png",
-                          name: "Cat",
-                          color: (0xFF3E423F),
-                          context: context,
-                          categoriesepage: Categories(),
-                          backGroundColor: 0xB2B7DFF5),
-                      categories_comp(
-                          image: "assets/birdo.png",
-                          name: "Bird",
-                          color: 0xFF3E423F,
-                          context: context,
-                          categoriesepage: Categories(),
-                          backGroundColor: 0xB2D3B0E0),
-                      SizedBox(
-                        width: 5,
-                      ),
-                      Column(
-                        children: [
-                          TextButton(
-                            onPressed: () {
-                              setState(() {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => Categories(),
-                                  ),
-                                );
-                              });
-                            },
-                            child: Icon(Icons.navigate_next),
-                          ),
-                          Text(
-                            "more",
-                            style: TextStyle(fontSize: 15, color: Colors.grey),
-                          )
-                        ],
-                      )
-                    ],
-                  )),
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      width: 5,
+                    ),
+                    categories_comp(
+                        image: "assets/dogo.png",
+                        name: "Dog",
+                        color: 0xFF3E423F,
+                        context: context,
+                        categoriesepage: Categories(),
+                        backGroundColor: 0xFFFEF1E4),
+                    categories_comp(
+                        image: "assets/catoo.png",
+                        name: "Cat",
+                        color: (0xFF3E423F),
+                        context: context,
+                        categoriesepage: Categories(),
+                        backGroundColor: 0xB2B7DFF5),
+                    categories_comp(
+                        image: "assets/birdo.png",
+                        name: "Bird",
+                        color: 0xFF3E423F,
+                        context: context,
+                        categoriesepage: Categories(),
+                        backGroundColor: 0xB2D3B0E0),
+                    SizedBox(
+                      width: 5,
+                    ),
+                  ],
+                ),
+              ),
               Padding(
                 padding: const EdgeInsets.all(20),
                 child: Row(
@@ -256,23 +236,66 @@ class _petoHomeState extends State<petoHome> {
                         context: context,
                         page1: Details_page(),
                         page2: basket_page()),
-                    Column(
-                      children: [
-                        TextButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => Categories(),
-                              ),
-                            );
-                          },
-                          child: Icon(Icons.navigate_next),
-                        ),
-                        Text("more",
-                            style: TextStyle(fontSize: 15, color: Colors.grey))
-                      ],
-                    )
+                    product_compo(
+                        Image1: "assets/product.png",
+                        Icon: "assets/shop.png",
+                        productName: "ROYAL CANIN",
+                        producPrice: "\$22,99",
+                        context: context,
+                        page1: Details_page(),
+                        page2: basket_page()),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    product_compo(
+                        Image1: "assets/kitten.png",
+                        Icon: "assets/shop.png",
+                        productName: "ROYAL CANIN",
+                        producPrice: "\$22,99",
+                        context: context,
+                        page1: Details_page(),
+                        page2: basket_page()),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    product_compo(
+                        Image1: "assets/product.png",
+                        Icon: "assets/shop.png",
+                        productName: "ROYAL CANIN",
+                        producPrice: "\$22,99",
+                        context: context,
+                        page1: Details_page(),
+                        page2: basket_page()),
+                    product_compo(
+                        Image1: "assets/product.png",
+                        Icon: "assets/shop.png",
+                        productName: "ROYAL CANIN",
+                        producPrice: "\$22,99",
+                        context: context,
+                        page1: Details_page(),
+                        page2: basket_page()),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    product_compo(
+                        Image1: "assets/kitten.png",
+                        Icon: "assets/shop.png",
+                        productName: "ROYAL CANIN",
+                        producPrice: "\$22,99",
+                        context: context,
+                        page1: Details_page(),
+                        page2: basket_page()),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    product_compo(
+                        Image1: "assets/product.png",
+                        Icon: "assets/shop.png",
+                        productName: "ROYAL CANIN",
+                        producPrice: "\$22,99",
+                        context: context,
+                        page1: Details_page(),
+                        page2: basket_page()),
                   ],
                 ),
               ),
@@ -319,6 +342,15 @@ class _petoHomeState extends State<petoHome> {
                       width: 40,
                     ),
                     product_compo(
+                      Image1: "assets/kitten.png",
+                      Icon: "assets/shop.png",
+                      productName: "ROYAL CANIN",
+                      producPrice: "\$22,99",
+                      context: context,
+                      page1: Details_page(),
+                      page2: basket_page(),
+                    ),
+                    product_compo(
                         Image1: "assets/kitten.png",
                         Icon: "assets/shop.png",
                         productName: "ROYAL CANIN",
@@ -326,23 +358,60 @@ class _petoHomeState extends State<petoHome> {
                         context: context,
                         page1: Details_page(),
                         page2: basket_page()),
-                    Column(
-                      children: [
-                        TextButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => Categories(),
-                              ),
-                            );
-                          },
-                          child: Icon(Icons.navigate_next),
-                        ),
-                        Text("more",
-                            style: TextStyle(fontSize: 15, color: Colors.grey))
-                      ],
-                    )
+                    SizedBox(
+                      width: 40,
+                    ),
+                    product_compo(
+                        Image1: "assets/product.png",
+                        Icon: "assets/shop.png",
+                        productName: "ROYAL CANIN",
+                        producPrice: "\$22,99",
+                        context: context,
+                        page1: Details_page(),
+                        page2: basket_page()),
+                    SizedBox(
+                      width: 40,
+                    ),
+                    product_compo(
+                      Image1: "assets/kitten.png",
+                      Icon: "assets/shop.png",
+                      productName: "ROYAL CANIN",
+                      producPrice: "\$22,99",
+                      context: context,
+                      page1: Details_page(),
+                      page2: basket_page(),
+                    ),
+                    product_compo(
+                        Image1: "assets/kitten.png",
+                        Icon: "assets/shop.png",
+                        productName: "ROYAL CANIN",
+                        producPrice: "\$22,99",
+                        context: context,
+                        page1: Details_page(),
+                        page2: basket_page()),
+                    SizedBox(
+                      width: 40,
+                    ),
+                    product_compo(
+                        Image1: "assets/product.png",
+                        Icon: "assets/shop.png",
+                        productName: "ROYAL CANIN",
+                        producPrice: "\$22,99",
+                        context: context,
+                        page1: Details_page(),
+                        page2: basket_page()),
+                    SizedBox(
+                      width: 40,
+                    ),
+                    product_compo(
+                      Image1: "assets/kitten.png",
+                      Icon: "assets/shop.png",
+                      productName: "ROYAL CANIN",
+                      producPrice: "\$22,99",
+                      context: context,
+                      page1: Details_page(),
+                      page2: basket_page(),
+                    ),
                   ],
                 ),
               )

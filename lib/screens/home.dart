@@ -3,6 +3,7 @@ import 'package:peto/screens/basket_page.dart';
 import 'package:peto/screens/details_page.dart';
 import 'package:peto/screens/petoHome.dart';
 import 'package:peto/screens/categories .dart';
+import 'package:peto/screens/profile_screen.dart';
 
 class home extends StatefulWidget {
   const home({super.key});
@@ -16,7 +17,7 @@ class _homeState extends State<home> {
   List<Widget> pages = [
     petoHome(),
     Categories(),
-    Details_page(),
+    ProfileScreen(),
   ];
   @override
   Widget build(BuildContext context) {
