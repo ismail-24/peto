@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:peto/screens/profile_screen.dart';
 
 import 'package:peto/svscreen/signup.dart';
 // import 'package:peto/svscreen/welcom.dart';
@@ -9,14 +10,25 @@ class signin extends StatefulWidget {
   const signin({super.key});
 
   @override
-  State<signin> createState() => _signinState();
+  State<signin> createState() => signinState();
 }
 
-class _signinState extends State<signin> {
+String email = '';
+
+class signinState extends State<signin> {
   bool ispassword = true;
   final _formKey = GlobalKey<FormState>();
-  TextEditingController emailcontroller = TextEditingController();
+  TextEditingController emailController = TextEditingController();
   TextEditingController passwordcontroller = TextEditingController();
+  @override
+  void initState() {
+    super.initState();
+    emailController.addListener(() {
+      setState(() {
+        email = emailController.text;
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +75,7 @@ class _signinState extends State<signin> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: TextFormField(
-                    controller: emailcontroller,
+                    controller: emailController,
                     autovalidateMode: AutovalidateMode.onUserInteraction,
                     validator: (value) {
                       if (value == null || !value.contains('@')) {
@@ -115,18 +127,17 @@ class _signinState extends State<signin> {
                   onTap: () async {
                     if (_formKey.currentState!.validate()) {
                       bool result = await firebaselogin(
-                          emailcontroller.text, passwordcontroller.text);
+                          emailController.text, passwordcontroller.text);
                       if (result == true) {
-                        // final SharedPreferences prefs = await SharedPreferences.getInstance();
-                        // await prefs.setString('email', emailcontroller.text);
-
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => home()),
+                          MaterialPageRoute(
+                            builder: (context) => home(),
+                          ),
                         );
                       } else {
                         ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('login faild')),
+                          const SnackBar(content: Text('login failed')),
                         );
                       }
                     }

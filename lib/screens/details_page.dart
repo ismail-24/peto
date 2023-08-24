@@ -18,24 +18,6 @@ class _Details_pageState extends State<Details_page> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Color(0xffffffff),
-        // title: Row(
-        //   mainAxisAlignment: MainAxisAlignment.center,
-        //   children: [
-        //     Padding(
-        //       padding: const EdgeInsets.only(right: 40),
-        //       child: Text(
-        //         'Peto',
-        //         style: TextStyle(
-        //           color: Color(0xFF1F2223),
-        //           fontSize: 42,
-        //           fontFamily: 'Poppins',
-        //           fontWeight: FontWeight.w700,
-        //           height: 1.30,
-        //         ),
-        //       ),
-        //     ),
-        //   ],
-        // ),
       ),
       body: Column(
         children: [

@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:peto/screens/Developers.dart';
 import 'package:peto/screens/aboutscreen.dart';
+import 'package:peto/svscreen/signin.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 
+  @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,11 +34,11 @@ class ProfileScreen extends StatelessWidget {
             children: [
               const CircleAvatar(
                 radius: 70.0,
-                backgroundImage: AssetImage('assets/image.png'),
+                backgroundImage: AssetImage('assets/person.png'),
               ),
               const SizedBox(height: 16.0),
               const Text(
-                'Ismail Tarek',
+                'user name',
                 style: TextStyle(
                   fontSize: 16.0,
                   fontWeight: FontWeight.bold,
@@ -40,8 +46,8 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 5.0),
-              const Text(
-                'AliAhmed33@gmail.com',
+              Text(
+                email,
                 style: TextStyle(
                   fontSize: 14.0,
                   color: Colors.grey,
