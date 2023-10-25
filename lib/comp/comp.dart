@@ -6,9 +6,6 @@
 
 import 'package:flutter/material.dart';
 
-import '../screens/basket_page.dart';
-import '../screens/details_page.dart';
-
 categories_comp(
     {required String image,
     required String name,

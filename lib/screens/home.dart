@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:peto/screens/basket_page.dart';
-import 'package:peto/screens/details_page.dart';
+
 import 'package:peto/screens/petoHome.dart';
 import 'package:peto/screens/categories .dart';
 import 'package:peto/screens/profile_screen.dart';

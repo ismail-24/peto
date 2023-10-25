@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:counter_button/counter_button.dart';
-import 'package:peto/comp/comp.dart';
 
 class Details_page extends StatefulWidget {
   const Details_page({super.key});
