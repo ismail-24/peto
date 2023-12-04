@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-import 'package:peto/svscreen/signup.dart';
+import 'package:peto/screens/signup.dart';
 // import 'package:peto/svscreen/welcom.dart';
 import 'package:peto/screens/home.dart';
 

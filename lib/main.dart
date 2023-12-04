@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 // import 'package:peto/screens/categories%20.dart';
 // import 'package:peto/screens/home.dart';
 // import 'package:peto/screens/petoHome.dart';
-import 'package:peto/svscreen/welcom.dart';
+import 'package:peto/screens/welcom.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 

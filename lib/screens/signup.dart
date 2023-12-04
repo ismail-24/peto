@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:peto/svscreen/hoam.dart';
-import 'package:peto/svscreen/signin.dart';
+import 'package:peto/screens/hoam.dart';
+import 'package:peto/screens/signin.dart';
 
 class signup extends StatefulWidget {
   const signup({super.key});

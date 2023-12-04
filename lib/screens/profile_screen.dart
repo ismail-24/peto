@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:peto/screens/Developers.dart';
 import 'package:peto/screens/aboutscreen.dart';
-import 'package:peto/svscreen/signin.dart';
+import 'package:peto/screens/signin.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});

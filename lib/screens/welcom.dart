@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:peto/svscreen/signin.dart';
+import 'package:peto/screens/signin.dart';
 
 class welcom extends StatefulWidget {
   const welcom({super.key});
